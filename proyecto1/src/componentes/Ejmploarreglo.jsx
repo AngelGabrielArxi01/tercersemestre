@@ -1,7 +1,7 @@
+import React from 'react'
 import {useEffect, useState } from "react";
 
-function App() {
-// Iniciamos con un estado para el arreglo
+function Ejmploarreglo() {// Iniciamos con un estado para el arreglo
 const [elementos,setElementos]=useState([]);
 //crear funcionpara agregar datos
 const agregarDatos=()=>{
@@ -9,10 +9,15 @@ const agregarDatos=()=>{
   setElementos([...elementos, nuevoNumero]);
 }
 //Metodo para recorrer el arreglo
-const numerorandom=(elementos.index)=>(
+const recorrerArreglo =(elementos, index)=>(
   <li  
-   key={index} 
-  ></li>
+   key={index}
+   style={{
+    margin: "5px 0",
+    fontSize: "18px"
+   }} 
+  > 
+  Elemento #{index + 1}: <strong>{elementos}</strong></li>
 
 )
 
@@ -22,8 +27,9 @@ const numerorandom=(elementos.index)=>(
   useEffect(()=>{
 console.log("El arreglo de datos es:",elementos)
   },[elementos]);
-  return (
-    <>
+  
+   
+  return ( <>
    <h1>Miprimer arreglo</h1>
   <div style={{padding:'20px'}}>
   <h2>Paso1 Agregar datos al arreglo</h2>
@@ -39,7 +45,8 @@ console.log("El arreglo de datos es:",elementos)
   </ul>
   </div>
     </>
+    //<div>Ejmploarreglo</div>
   )
 }
 
-export default App
+export default Ejmploarreglo
